@@ -63,10 +63,15 @@ const typeDefs = gql`
 
   type Query {
     user(userId: ID!): User
-    users: User
+    users: [User]
     me: User
     reservation(reservationId: ID!): Reservation
-    reservations: Reservation
+    reservations: [Reservation]
+    diningPackages: [DiningPackage]
+    roomTypes: [RoomType]
+    excursions: [Excursion]
+    missionDates: [MissionDate]
+    onBoardActivities: [OnBoardActivity]
   }
 `;
 
