@@ -16,21 +16,21 @@ const resolvers = {
     reservations: async () => {
       return Reservation.find();
     },
-    // diningPackage: async () => {
-    //     return DiningPackage.find();
-    //   },
-    // excursion: async () => {
-    //     return Excursion.find();
-    // },
-    // missionDate: async () => {
-    //     return MissionDate.find();
-    // },
-    // onBoardActivity: async () => {
-    //     return OnBoardActivity.find();
-    // },
-    // roomType: async () => {
-    //     return RoomType.find();
-    // },
+    diningPackages: async () => {
+        return DiningPackage.find();
+      },
+    excursions: async () => {
+        return Excursion.find();
+    },
+    missionDates: async () => {
+        return MissionDate.find();
+    },
+    onBoardActivities: async () => {
+        return OnBoardActivity.find();
+    },
+    roomTypes: async () => {
+        return RoomType.find();
+    },
     // me: async (parent, args, context) => {
     //     if (context.user) {
     //       return Profile.findOne({ _id: context.user._id });
