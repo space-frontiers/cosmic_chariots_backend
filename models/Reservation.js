@@ -1,12 +1,6 @@
 const { Schema, model } = require('mongoose');
 
 const reservationSchema = new Schema({
-    user: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'User'
-          }
-    ],
     excursion: [
         {
             type: Schema.Types.ObjectId,
@@ -27,8 +21,7 @@ const reservationSchema = new Schema({
     ],
     room_type: [
         {
-            type: Schema.Types.ObjectId,
-            ref: 'RoomType'
+            type: String,
           }
     ],
   });

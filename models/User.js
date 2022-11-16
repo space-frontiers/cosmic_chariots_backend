@@ -4,16 +4,14 @@ const bcrypt = require('bcrypt');
 const userSchema = new Schema({
     first_name: {
       type: String,
-      required: true,
-      unique: true,
+      required: false,
       trim: true,
     },
     last_name: {
-        type: String,
-        required: true,
-        unique: true,
-        trim: true,
-      },
+      type: String,
+      required: false,
+      trim: true,
+    },
     email: {
       type: String,
       required: true,
@@ -22,44 +20,39 @@ const userSchema = new Schema({
     },
     phone_number: {
         type: String,
-        required: true,
+        required: false,
         unique: true,
         trim: true,
       },
    street_address_1: {
         type: String,
-        required: true,
-        unique: true,
+        required: false,
+        unique: false,
         trim: true,
       },  
     street_address_2: {
         type: String,
         required: false,
-        unique: true,
         trim: true,
       },
     city: {
         type: String,
-        required: true,
-        unique: true,
+        required: false,
         trim: true,
       },
     state: {
         type: String,
-        required: true,
-        unique: true,
+        required: false,
         trim: true,
       },
     zip: {
         type: String,
-        required: true,
-        unique: true,
+        required: false,
         trim: true,
       },
     country: {
         type: String,
-        required: true,
-        unique: true,
+        required: false,
         trim: true,
       },
     password: {
@@ -77,7 +70,7 @@ const userSchema = new Schema({
 
 
 // set up pre-save middleware to create password
-profileSchema.pre('save', async function (next) {
+userSchema.pre('save', async function (next) {
     if (this.isNew || this.isModified('password')) {
       const saltRounds = 10;
       this.password = await bcrypt.hash(this.password, saltRounds);
@@ -87,7 +80,7 @@ profileSchema.pre('save', async function (next) {
 });
   
 // compare the incoming password with the hashed password
-profileSchema.methods.isCorrectPassword = async function (password) {
+userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 

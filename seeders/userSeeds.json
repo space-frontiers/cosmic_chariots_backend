@@ -1,0 +1,19 @@
+[
+    {
+        "first_name": "Rachael",
+        "last_name": "Green",
+        "email": "rgreen@email.com",
+        "phone_number": "(123) 234-9948",
+        "street_address_1": "123 Main Street",
+        "street_address_2": "",
+        "city": "New York",
+        "state": "New York",
+        "zip": "10001",
+        "country": "The United States of America",
+        "password": "emma1scute"
+    },
+    {
+        "email": "mgeller@email.com",
+        "password": "s0clean"
+    }
+]

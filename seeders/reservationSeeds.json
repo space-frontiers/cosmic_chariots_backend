@@ -1,0 +1,32 @@
+[
+    {
+        "excursion": [
+            {
+            }
+        ],
+        "on_board_activity": [
+            {
+              }
+        ],
+        "dining_package": [
+            {
+              }
+        ],
+        "room_type": ["Premium Suite"]
+    },
+    {
+        "excursion": [
+            {
+            }
+        ],
+        "on_board_activity": [
+            {
+              }
+        ],
+        "dining_package": [
+            {
+              }
+        ],
+        "room_type": ["Basic Accommodations"]
+    }
+]
