@@ -13,13 +13,13 @@ const reservationSchema = new Schema({
             ref: 'Excursion'
           }
     ],
-    on_board_activities: [
+    on_board_activity: [
         {
             type: Schema.Types.ObjectId,
             ref: 'OnBoardActivities'
           }
     ],
-    dining_packages: [
+    dining_package: [
         {
             type: Schema.Types.ObjectId,
             ref: 'DiningPackages'

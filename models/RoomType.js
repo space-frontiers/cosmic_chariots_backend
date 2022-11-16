@@ -5,12 +5,6 @@ const roomTypesSchema = new Schema({
         type: String,
         required: true,
     },
-    reservation: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Reservation'
-          }
-    ]
 });
 
 const RoomTypesSchema = model('RoomTypesSchema', roomTypesSchema);
