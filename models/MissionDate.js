@@ -9,6 +9,10 @@ const missionDateSchema = new Schema({
         type: String,
         required: true,
     },
+    description: {
+        type: String,
+        required: true,
+    },
     room_type: [
         {
             type: Schema.Types.ObjectId,

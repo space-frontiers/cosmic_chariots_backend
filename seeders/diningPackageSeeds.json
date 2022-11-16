@@ -1,8 +1,17 @@
 [
     {
-        "package": "Wine and Dine"
+        "package": "Wine and Dine",
+        "description": "Our on-board sommelier knows exactly what wines to pair with stargazing... and dinner too. Every night, you'll recieve a glass of the perfect wine to go with your meal and one smartly paired with dessert.",
+        "cost": "$59/night"
     },
     {
-        "package": "Steak Just Literally Every Night"
+        "package": "There's Always More Space for Food!",
+        "description": "Come to our gourmet buffet of irresistible delicacies that are out of this world. Every night is a different feast, with exciting options for the whole family to choose from.",
+        "cost": "$49/night"
+    },
+    {
+        "package": "Literally Just Stake Every Night",
+        "description": "For our meat-eaters, we know you want all the joys of a hearty Earth meal from the safty of our ship. Come enjoy the finest cuts while you drift through the galaxy",
+        "cost": "$69/night"
     }
 ]

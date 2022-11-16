@@ -1,11 +1,26 @@
 [
     {
-        "suite": "Basic Accommodations"
+        "suite": "Basic Accommodations",
+        "amenities_1": "Space Bed",
+        "amenities_2": "Luxury Bathroom",
+        "amenities_3": "Storage Space",
+        "amenities_4": "The Softest Pillows Off-Earth",
+        "cost": "$1,499/night"
     },
     {
-        "suite": "Premium Suite"
+        "suite": "Premium Suite",
+        "amenities_1": "Your Own View of Space",
+        "amenities_2": "Mini-Fridge",
+        "amenities_3": "Luxury Bathroom",
+        "amenities_4": "Storage Space",
+        "cost": "$2,999/night"
     },
     {
-        "suite": "Armstrong Suite"
+        "suite": "Armstrong Suite",
+        "amenities_1": "Living Room",
+        "amenities_2": "Dining Room",
+        "amenities_3": "On-Call Concierge",
+        "amenities_4": "Extra Large Window",
+        "cost": "$5,999/night"
     }
 ]

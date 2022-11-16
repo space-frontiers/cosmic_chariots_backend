@@ -1,8 +1,22 @@
 [
     {
-        "excursion": "Rover Mission"         
+        "excursion": "Rover Mission",
+        "description": "Our most popular excursion - Head out for a once-in-a-lifetime drive around the a whole new planet!",
+        "cost": "$119/person"       
     },
     {
-        "excursion": "Carrot Top Concert"         
+        "excursion": "Carrot Top LIVE!",
+        "description": "Do you know what's better than a Carrot Top show? A Carrot Top show in SPACE! Come see this incredible artist before the venue is outta space!",
+        "cost": "$75/person" 
+    },
+    {
+        "excursion": "Planetary Hike",
+        "description": "When hiking on a new planet, you never know what you might encounter. A crater that has proof of live, an ancient water bed now dry, or a really cool rock. Come join to see what you find.",
+        "cost": "$85/person" 
+    },
+    {
+        "excursion": "Ghost Tour",
+        "description": "Those who have left our planet... and then left our world haven’t always left us for good! Come meet the spirits that haunt our solar system!",
+        "cost": "$99/person" 
     }
 ]

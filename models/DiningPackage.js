@@ -4,7 +4,14 @@ const diningPackageSchema = new Schema({
     package: {
         type: String,
         required: true,
-        trim: true,
+    },
+    description: {
+        type: String,
+        required: true,
+    },
+    cost: {
+        type: String,
+        required: true,
     },
 });
 
