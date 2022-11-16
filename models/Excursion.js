@@ -5,6 +5,14 @@ const excursionSchema = new Schema({
         type: String,
         required: true,
     },
+    description: {
+        type: String,
+        required: true,
+    },
+    cost: {
+        type: String,
+        required: true,
+    },
 });
 
 

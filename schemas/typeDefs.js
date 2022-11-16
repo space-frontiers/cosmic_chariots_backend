@@ -35,12 +35,18 @@ const typeDefs = gql`
   type RoomType {
     _id: ID!
     suite: String
+    amenities_1: String
+    amenities_2: String
+    amenities_3: String
+    amenities_4: String
+    cost: String
   }
 
   type MissionDate {
     _id: ID!
     destination: String
     date: String
+    description: String
     room_type: RoomType
   }
 
@@ -49,16 +55,22 @@ const typeDefs = gql`
   type Excursion {
     _id: ID!
     excursion: String
+    description: String
+    cost: String
   }
 
   type OnBoardActivity {
     _id: ID!
     on_board_activity: String
+    description: String
+    cost: String
   }
 
   type DiningPackage {
     _id: ID!
     package: String
+    description: String
+    cost: String
   }
 
   type Query {
