@@ -5,12 +5,6 @@ const onBoardActivitySchema = new Schema({
         type: String,
         required: true,
     },
-    reservation: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Reservation'
-          }
-    ]
 });
 
 

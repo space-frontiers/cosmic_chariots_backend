@@ -6,12 +6,6 @@ const diningPackageSchema = new Schema({
         required: true,
         trim: true,
     },
-    reservation: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Reservation'
-          }
-    ]
 });
 
 
