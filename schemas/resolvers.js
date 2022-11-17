@@ -39,27 +39,27 @@ const resolvers = {
     // },
   },
 
-  // Mutation: {
-  //   addUser: async (parent, { name, email, password }) => {
-  //     const user = await User.create({ name, email, password });
-  //   //   const token = signToken(profile);
+  Mutation: {
+    addUser: async (parent, { email, password }) => {
+      const user = await User.create({email, password });
+    //   const token = signToken(profile);
 
-  //   //   return { token, User };
-  //     return { User };
-  //   },
-  //   login: async (parent, { email, password }) => {
-  //     const user = await User.findOne({ email });
+    //   return { token, User };
+      return { User };
+    },
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
 
-  //     const correctPw = await profile.isCorrectPassword(password);
+      const correctPw = await profile.isCorrectPassword(password);
 
-  //     if (!user || !correctPw) {
-  //       throw new AuthenticationError('Unable to locate user with information provided');
-  //     }
+      if (!user || !correctPw) {
+        throw new AuthenticationError('Unable to locate user with information provided');
+      }
 
-  //   //   const token = signToken(profile);
-  //   //   return { token, profile };
-  //     return { profile };
-  //   },
+    //   const token = signToken(profile);
+    //   return { token, profile };
+      return { profile };
+    },
 
   //   // addReservation: async (parent, { userId, room_type }) => {
   //   //     const reservation = await Reservation.create({ room_type })
@@ -96,7 +96,7 @@ const resolvers = {
   //   //     { new: true }
   //   //   );
   //   // },
-  // },
+  },
 };
 
 module.exports = resolvers;
