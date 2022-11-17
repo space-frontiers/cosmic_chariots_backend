@@ -85,6 +85,16 @@ const typeDefs = gql`
     missionDates: [MissionDate]
     onBoardActivities: [OnBoardActivity]
   }
+
+  type Mutation {
+    addUser(email: String!, password: String!): User
+    login(email: String!, password: String!): Auth
+  }
 `;
 
 module.exports = typeDefs;
+
+
+// addReservation(userId: ID!, room_type: String!): Reservation
+// updateReservation(reservationId: ID!, excursion: String, on_board_activity: String, dining_package: String)): Reservation
+// removeReservation(reservationId: ID!): Reservation

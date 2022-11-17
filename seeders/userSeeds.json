@@ -3,7 +3,7 @@
         "first_name": "Rachael",
         "last_name": "Green",
         "email": "rgreen@email.com",
-        "phone_number": "(123) 234-9948",
+        "phone_number": null,
         "street_address_1": "123 Main Street",
         "street_address_2": "",
         "city": "New York",
@@ -13,7 +13,16 @@
         "password": "emma1scute"
     },
     {
+        "first_name": "Rachael",
+        "last_name": "Green",
         "email": "mgeller@email.com",
+        "phone_number": "123",
+        "street_address_1": "123 Main Street",
+        "street_address_2": "",
+        "city": "New York",
+        "state": "New York",
+        "zip": "10001",
+        "country": "The United States of America",
         "password": "s0clean"
     }
 ]
