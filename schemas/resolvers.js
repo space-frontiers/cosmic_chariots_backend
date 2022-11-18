@@ -56,24 +56,35 @@ const resolvers = {
         throw new AuthenticationError('Unable to locate user with information provided');
       }
 
-    //   const token = signToken(profile);
-    //   return { token, profile };
-      return { profile };
+      const token = signToken(user);
+      return { token, user };
+    },
+      addReservation: async (parent, { room_type }) => {
+        const reservation = await Reservation.create({ room_type })
+      return reservation
+    },
+    //   updateUserReservation: async (parent, { reservation }) => {
+    //     const reservation = await Reservation.create({ room_type })
+    //     return reservation
+    // },
+
+    updateUserReservation: async (parent, { userId, reservationId }, context) => {
+      // if (context.user) {
+        return User.findOneAndUpdate(
+          { _id: userId },
+          {
+            $addToSet: { reservation: reservationId },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      // }
+      // throw new AuthenticationError('You need to be logged in!');
     },
 
-  //   // addReservation: async (parent, { userId, room_type }) => {
-  //   //     const reservation = await Reservation.create({ room_type })
-  //   //   return User.findOneAndUpdate(
-  //   //     { _id: userId },
-  //   //     {
-  //   //         $addToSet: { reservation: reservation },
-  //   //     },
-  //   //     {
-  //   //       new: true,
-  //   //       runValidators: true,
-  //   //     }
-  //   //   );
-  //   // },
+
   //   // updateReservation: async (parent, { reservationId, room_type }) => {
   //   //     return Reservation.findOneAndUpdate(
   //   //       { _id: reservationId },
@@ -100,3 +111,14 @@ const resolvers = {
 };
 
 module.exports = resolvers;
+
+
+
+// { _id: userId },
+// {
+//     $addToSet: { reservation: reservation },
+// },
+// {
+//   new: true,
+//   runValidators: true,
+// }
