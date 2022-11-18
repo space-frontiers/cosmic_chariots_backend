@@ -28,7 +28,8 @@ const typeDefs = gql`
     excursion: Excursion
     on_board_activity: OnBoardActivity
     dining_package: DiningPackage
-    room_type: String
+    room_type: RoomType
+    mission_date: MissionDate
   }
 
   #Room Booking
@@ -43,12 +44,11 @@ const typeDefs = gql`
     cost: String
   }
 
-  type MissionDate {
+type MissionDate {
     _id: ID!
     destination: String
     date: String
     description: String
-    room_type: RoomType
   }
 
   #Experiences
@@ -74,6 +74,27 @@ const typeDefs = gql`
     cost: String
   }
 
+  #Input Types
+
+  #Room Booking
+
+  input RoomTypeInput {
+    _id: ID!
+    suite: String
+    amenities_1: String
+    amenities_2: String
+    amenities_3: String
+    amenities_4: String
+    cost: String
+  }
+  
+  input MissionDateInput {
+    _id: ID!
+    destination: String
+    date: String
+    description: String
+  }
+
   type Query {
     user(userId: ID!): User
     users: [User]
@@ -90,8 +111,8 @@ const typeDefs = gql`
   type Mutation {
     addUser(email: String!, password: String!): User
     login(email: String!, password: String!): Auth
-    addReservation(room_type: String!): Reservation
-    updateUserReservation(userId: ID!, reservationId: ID!): User
+    addReservation: Reservation
+    updateReservationMissionDate(reservationId: ID!, input: MissionDateInput): Reservation
   }
 `;
 
@@ -101,3 +122,5 @@ module.exports = typeDefs;
 // addReservation(userId: ID!, room_type: String!): Reservation
 // updateReservation(reservationId: ID!, excursion: String, on_board_activity: String, dining_package: String)): Reservation
 // removeReservation(reservationId: ID!): Reservation
+
+// updateUserReservation(userId: ID!, room_type: String!): User

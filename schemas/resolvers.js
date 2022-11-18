@@ -59,30 +59,40 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-      addReservation: async (parent, { room_type }) => {
-        const reservation = await Reservation.create({ room_type })
+    addReservation: async (parent, {}) => {
+        const reservation = await Reservation.create({})
       return reservation
     },
-    //   updateUserReservation: async (parent, { reservation }) => {
-    //     const reservation = await Reservation.create({ room_type })
-    //     return reservation
-    // },
 
-    updateUserReservation: async (parent, { userId, reservationId }, context) => {
-      // if (context.user) {
-        return User.findOneAndUpdate(
-          { _id: userId },
+    updateReservationMissionDate: async (parent, { reservationId, input }, context) => {
+      console.log(input)
+        return Reservation.findOneAndUpdate(
+          { _id: reservationId },
           {
-            $addToSet: { reservation: reservationId },
+            $addToSet: { mission_date: input },
           },
           {
             new: true,
             runValidators: true,
           }
         );
+    },
+
+    // updateUserReservation: async (parent, { userId, reservationData }, context) => {
+    //   // if (context.user) {
+    //     return User.findOneAndUpdate(
+    //       { _id: userId },
+    //       {
+    //         $push: { reservation: reservationData },
+    //       },
+    //       {
+    //         new: true,
+    //         runValidators: true,
+    //       }
+    //     );
       // }
       // throw new AuthenticationError('You need to be logged in!');
-    },
+    // },
 
 
   //   // updateReservation: async (parent, { reservationId, room_type }) => {
