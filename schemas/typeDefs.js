@@ -28,6 +28,7 @@ const typeDefs = gql`
     excursion: Excursion
     on_board_activity: OnBoardActivity
     dining_package: DiningPackage
+    room_type: String
   }
 
   #Room Booking
@@ -89,6 +90,8 @@ const typeDefs = gql`
   type Mutation {
     addUser(email: String!, password: String!): User
     login(email: String!, password: String!): Auth
+    addReservation(room_type: String!): Reservation
+    updateUserReservation(userId: ID!, reservationId: ID!): User
   }
 `;
 
