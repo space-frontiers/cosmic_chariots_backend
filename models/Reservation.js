@@ -20,10 +20,27 @@ const reservationSchema = new Schema({
     },
   ],
   room_type: {
-      type: String,
-      trim: true,
-      unique: false,
+    type: Schema.Types.ObjectId,
+    ref: "RoomType",
+  },
+  mission_date: {
+    type: Schema.Types.ObjectId,
+    ref: "MissionDate",
   }
+  // mission_date: {
+  //   destination: {
+  //     type: String,
+  //     required: false,
+  //   },
+  //   date: {
+  //     type: String,
+  //     required: false,
+  //   },
+  //   description: {
+  //     type: String,
+  //     required: false,
+  //   },
+  // }
 });
 
 const Reservation = model("Reservation", reservationSchema);
