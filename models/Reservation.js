@@ -1,6 +1,22 @@
 const { Schema, model } = require("mongoose");
 
 const reservationSchema = new Schema({
+  mission: {
+     date: {
+    type: String,
+    required: false,
+    },
+    destination: {
+    type: String,
+    required: false,
+    },
+  },
+  room_type: {
+    suite: {
+    type: String,
+    required: false,
+    },
+  },
   excursion: [
     {
       type: Schema.Types.ObjectId,
@@ -19,11 +35,6 @@ const reservationSchema = new Schema({
       ref: "DiningPackages",
     },
   ],
-  room_type: {
-      type: String,
-      trim: true,
-      unique: false,
-  }
 });
 
 const Reservation = model("Reservation", reservationSchema);

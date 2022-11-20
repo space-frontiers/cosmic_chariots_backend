@@ -14,7 +14,7 @@ const typeDefs = gql`
     zip: String
     country: String
     password: String
-    reservation: Reservation
+    reservation: [Reservation]
   }
 
   type Auth {
@@ -22,16 +22,27 @@ const typeDefs = gql`
     user: User
   }
 
+# Reservation
+
   type Reservation {
     _id: ID!
-    user: User
-    excursion: Excursion
-    on_board_activity: OnBoardActivity
-    dining_package: DiningPackage
-    room_type: String
+    mission: MissionDateReservation
+    room_type: RoomTypeReservation
+    excursion: [String]
+    on_board_activity: [String]
+    dining_package: [String]
   }
 
-  #Room Booking
+  type MissionDateReservation {
+    date: String
+    destination: String
+  }
+
+  type RoomTypeReservation {
+    suite: String
+  }
+
+  #Costumer Options
 
   type RoomType {
     _id: ID!
@@ -43,15 +54,12 @@ const typeDefs = gql`
     cost: String
   }
 
-  type MissionDate {
+type MissionDate {
     _id: ID!
     destination: String
     date: String
     description: String
-    room_type: RoomType
   }
-
-  #Experiences
 
   type Excursion {
     _id: ID!
@@ -83,6 +91,19 @@ const typeDefs = gql`
     imageAlt: String
   }
 
+  #Input Types
+
+  #Room Booking
+  
+  input MissionDateInput {
+    date: String
+    destination: String
+  }
+
+  input RoomTypeInput {
+    suite: String
+  }
+
   type Query {
     user(userId: ID!): User
     users: [User]
@@ -99,14 +120,10 @@ const typeDefs = gql`
   type Mutation {
     addUser(email: String!, password: String!): User
     login(email: String!, password: String!): Auth
-    addReservation(room_type: String!): Reservation
-    updateUserReservation(userId: ID!, reservationId: ID!): User
+    addReservation: Reservation
+    updateReservationMissionDate(reservationId: ID!, input: MissionDateInput): Reservation
+    updateReservationRoomType(reservationId: ID!, input: RoomTypeInput): Reservation
   }
 `;
 
 module.exports = typeDefs;
-
-
-// addReservation(userId: ID!, room_type: String!): Reservation
-// updateReservation(reservationId: ID!, excursion: String, on_board_activity: String, dining_package: String)): Reservation
-// removeReservation(reservationId: ID!): Reservation

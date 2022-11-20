@@ -1,6 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { DiningPackage, Excursion, MissionDate, OnBoardActivity, Reservation, RoomType, User } = require('../models');
-// const { signToken } = require('../utils/auth');
+const { signToken } = require('../utils/auth');
+// const { User } = require("../models");
 
 const resolvers = {
   Query: {
@@ -50,7 +51,7 @@ const resolvers = {
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
-      const correctPw = await profile.isCorrectPassword(password);
+      const correctPw = await user.isCorrectPassword(password);
 
       if (!user || !correctPw) {
         throw new AuthenticationError('Unable to locate user with information provided');
@@ -59,66 +60,48 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-      addReservation: async (parent, { room_type }) => {
-        const reservation = await Reservation.create({ room_type })
+    addReservation: async (parent, {}) => {
+        const reservation = await Reservation.create({})
       return reservation
     },
-    //   updateUserReservation: async (parent, { reservation }) => {
-    //     const reservation = await Reservation.create({ room_type })
-    //     return reservation
-    // },
 
-    updateUserReservation: async (parent, { userId, reservationId }, context) => {
-      // if (context.user) {
-        return User.findOneAndUpdate(
-          { _id: userId },
+    updateReservationMissionDate: async (parent, { reservationId, input }, context) => {
+        return Reservation.findOneAndUpdate(
+          { _id: reservationId },
           {
-            $addToSet: { reservation: reservationId },
+            $set: { mission: input },
           },
           {
             new: true,
             runValidators: true,
           }
         );
-      // }
-      // throw new AuthenticationError('You need to be logged in!');
+    },
+    updateReservationRoomType: async (parent, { reservationId, input }, context) => {
+        return Reservation.findOneAndUpdate(
+          { _id: reservationId },
+          {
+            $set: { room_type: input },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
     },
 
 
-  //   // updateReservation: async (parent, { reservationId, room_type }) => {
-  //   //     return Reservation.findOneAndUpdate(
-  //   //       { _id: reservationId },
-  //   //       {
-  //   //         $addToSet: { room_type: room_type },
-  //   //       },
-  //   //       {
-  //   //         new: true,
-  //   //         runValidators: true,
-  //   //       }
-  //   //     );
-  //   //   },
-  //   // removeProfile: async (parent, { profileId }) => {
-  //   //   return Profile.findOneAndDelete({ _id: profileId });
-  //   // },
-  //   // removeSkill: async (parent, { profileId, skill }) => {
-  //   //   return Profile.findOneAndUpdate(
-  //   //     { _id: profileId },
-  //   //     { $pull: { skills: skill } },
-  //   //     { new: true }
-  //   //   );
-  //   // },
+    // removeProfile: async (parent, { profileId }) => {
+    //   return Profile.findOneAndDelete({ _id: profileId });
+    // },
+    // removeSkill: async (parent, { profileId, skill }) => {
+    //   return Profile.findOneAndUpdate(
+    //     { _id: profileId },
+    //     { $pull: { skills: skill } },
+    //     { new: true }
+    //   );
+    // },
   },
 };
 
 module.exports = resolvers;
-
-
-
-// { _id: userId },
-// {
-//     $addToSet: { reservation: reservation },
-// },
-// {
-//   new: true,
-//   runValidators: true,
-// }
