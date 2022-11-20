@@ -65,7 +65,6 @@ const resolvers = {
       return reservation
     },
     updateReservationMissionDate: async (parent, { reservationId, input }, context) => {
-      console.log(input)
         return Reservation.findOneAndUpdate(
           { _id: reservationId },
           {
@@ -78,7 +77,6 @@ const resolvers = {
         );
     },
     updateReservationRoomType: async (parent, { reservationId, input }, context) => {
-      console.log(input)
         return Reservation.findOneAndUpdate(
           { _id: reservationId },
           {
@@ -91,7 +89,6 @@ const resolvers = {
         );
     },
     updateReservationExcursion: async (parent, { reservationId, input }, context) => {
-      console.log(input)
         return Reservation.findOneAndUpdate(
           { _id: reservationId },
           {
@@ -104,7 +101,6 @@ const resolvers = {
         );
     },
     updateReservationActivity: async (parent, { reservationId, input }, context) => {
-      console.log(input)
         return Reservation.findOneAndUpdate(
           { _id: reservationId },
           {
@@ -116,45 +112,78 @@ const resolvers = {
           }
         );
     },
-    // updateUserReservation: async (parent, { userId, reservationData }, context) => {
-    //   // if (context.user) {
-    //     return User.findOneAndUpdate(
-    //       { _id: userId },
+    updateReservationDining: async (parent, { reservationId, input }, context) => {
+        return Reservation.findOneAndUpdate(
+          { _id: reservationId },
+          {
+            $addToSet: { dining_package: input },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+    },
+    removeReservationExcursion: async (parent, { reservationId, excursionId }, context) => {
+        return Reservation.findOneAndUpdate(
+          { _id: reservationId },
+          {
+            $pull: { excursion: { _id: excursionId } },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+    },
+    removeReservationActivity: async (parent, { reservationId, onBoardActivityId }, context) => {
+        return Reservation.findOneAndUpdate(
+          { _id: reservationId },
+          {
+            $pull: { on_board_activity: { _id: onBoardActivityId } },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+    },
+    removeReservationDiningPackage: async (parent, { reservationId, diningPackageId }, context) => {
+        return Reservation.findOneAndUpdate(
+          { _id: reservationId },
+          {
+            $pull: { dining_package: { _id: diningPackageId } },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+    },
+
+
+    // updateReservation: async (parent, { reservationId, room_type }) => {
+    //     return Reservation.findOneAndUpdate(
+    //       { _id: reservationId },
     //       {
-    //         $push: { reservation: reservationData },
+    //         $addToSet: { room_type: room_type },
     //       },
     //       {
     //         new: true,
     //         runValidators: true,
     //       }
     //     );
-      // }
-      // throw new AuthenticationError('You need to be logged in!');
+    //   },
+    // removeProfile: async (parent, { profileId }) => {
+    //   return Profile.findOneAndDelete({ _id: profileId });
     // },
-
-
-  //   // updateReservation: async (parent, { reservationId, room_type }) => {
-  //   //     return Reservation.findOneAndUpdate(
-  //   //       { _id: reservationId },
-  //   //       {
-  //   //         $addToSet: { room_type: room_type },
-  //   //       },
-  //   //       {
-  //   //         new: true,
-  //   //         runValidators: true,
-  //   //       }
-  //   //     );
-  //   //   },
-  //   // removeProfile: async (parent, { profileId }) => {
-  //   //   return Profile.findOneAndDelete({ _id: profileId });
-  //   // },
-  //   // removeSkill: async (parent, { profileId, skill }) => {
-  //   //   return Profile.findOneAndUpdate(
-  //   //     { _id: profileId },
-  //   //     { $pull: { skills: skill } },
-  //   //     { new: true }
-  //   //   );
-  //   // },
+    // removeSkill: async (parent, { profileId, skill }) => {
+    //   return Profile.findOneAndUpdate(
+    //     { _id: profileId },
+    //     { $pull: { skills: skill } },
+    //     { new: true }
+    //   );
+    // },
   },
 };
 

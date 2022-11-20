@@ -34,23 +34,28 @@ const typeDefs = gql`
   }
 
   type MissionDateReservation {
+    _id: ID!
     date: String
     destination: String
   }
 
   type RoomTypeReservation {
+    _id: ID!
     suite: String
   }
 
   type ExcursionReservation {
+    _id: ID!
     excursion: String
   }
 
   type OnBoardActivityReservation {
+    _id: ID!
     on_board_activity: String
   }
 
   type DiningPackageReservation {
+    _id: ID!
     dining_package: String
   }
 
@@ -108,23 +113,28 @@ const typeDefs = gql`
   #Reservations
 
   input MissionDateInput {
+    _id: ID!
     date: String
     destination: String
   }
 
   input RoomTypeInput {
+    _id: ID!
     suite: String
   }
 
   input ExcursionInput {
+    _id: ID!
     excursion: String
   }
 
   input OnBoardActivityInput {
+    _id: ID!
     on_board_activity: String
   }
 
   input DiningPackageInput {
+    _id: ID!
     dining_package: String
   }
 
@@ -164,6 +174,18 @@ const typeDefs = gql`
     updateReservationDining(
       reservationId: ID!
       input: DiningPackageInput
+    ): Reservation
+    removeReservationExcursion(
+      reservationId: ID!
+      excursionId: ID!
+    ): Reservation
+    removeReservationActivity(
+      reservationId: ID!
+      onBoardActivityId: ID!
+    ): Reservation
+    removeReservationDiningPackage(
+      reservationId: ID!
+      diningPackageId: ID!
     ): Reservation
   }
 `;
