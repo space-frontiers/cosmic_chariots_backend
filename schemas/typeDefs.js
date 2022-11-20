@@ -161,7 +161,8 @@ const typeDefs = gql`
       last_name: String!
       email: String!
       password: String!
-    ): User
+    ): Auth
+
     login(email: String!, password: String!): Auth
     updateUser(
       userId: ID!
@@ -172,7 +173,8 @@ const typeDefs = gql`
       state: String
       zip: String
       country: String
-    ): User
+    ): Auth
+
     addReservation(userId: ID!, reservationId: ID!): User
     createReservation: Reservation
     deleteReservation(reservationId: ID!): Reservation

@@ -56,10 +56,10 @@ const resolvers = {
         email,
         password,
       });
-      //   const token = signToken(profile);
+      const token = signToken(user);
 
-      //   return { token, User };
-      return { User };
+      return { token, user };
+      // return { User };
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
