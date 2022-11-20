@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type User {
@@ -22,15 +22,15 @@ const typeDefs = gql`
     user: User
   }
 
-# Reservation
+  # Reservation
 
   type Reservation {
     _id: ID!
     mission: MissionDateReservation
     room_type: RoomTypeReservation
-    excursion: [String]
-    on_board_activity: [String]
-    dining_package: [String]
+    excursion: [ExcursionReservation]
+    on_board_activity: [OnBoardActivityReservation]
+    dining_package: [DiningPackageReservation]
   }
 
   type MissionDateReservation {
@@ -40,6 +40,18 @@ const typeDefs = gql`
 
   type RoomTypeReservation {
     suite: String
+  }
+
+  type ExcursionReservation {
+    excursion: String
+  }
+
+  type OnBoardActivityReservation {
+    on_board_activity: String
+  }
+
+  type DiningPackageReservation {
+    dining_package: String
   }
 
   #Costumer Options
@@ -54,7 +66,7 @@ const typeDefs = gql`
     cost: String
   }
 
-type MissionDate {
+  type MissionDate {
     _id: ID!
     destination: String
     date: String
@@ -90,8 +102,8 @@ type MissionDate {
 
   #Input Types
 
-  #Room Booking
-  
+  #Reservations
+
   input MissionDateInput {
     date: String
     destination: String
@@ -99,6 +111,18 @@ type MissionDate {
 
   input RoomTypeInput {
     suite: String
+  }
+
+  input ExcursionInput {
+    excursion: String
+  }
+
+  input OnBoardActivityInput {
+    on_board_activity: String
+  }
+
+  input DiningPackageInput {
+    dining_package: String
   }
 
   type Query {
@@ -118,8 +142,26 @@ type MissionDate {
     addUser(email: String!, password: String!): User
     login(email: String!, password: String!): Auth
     addReservation: Reservation
-    updateReservationMissionDate(reservationId: ID!, input: MissionDateInput): Reservation
-    updateReservationRoomType(reservationId: ID!, input: RoomTypeInput): Reservation
+    updateReservationMissionDate(
+      reservationId: ID!
+      input: MissionDateInput
+    ): Reservation
+    updateReservationRoomType(
+      reservationId: ID!
+      input: RoomTypeInput
+    ): Reservation
+    updateReservationExcursion(
+      reservationId: ID!
+      input: ExcursionInput
+    ): Reservation
+    updateReservationActivity(
+      reservationId: ID!
+      input: OnBoardActivityInput
+    ): Reservation
+    updateReservationDining(
+      reservationId: ID!
+      input: DiningPackageInput
+    ): Reservation
   }
 `;
 
