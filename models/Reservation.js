@@ -2,6 +2,10 @@ const { Schema, model } = require("mongoose");
 
 const reservationSchema = new Schema({
   mission: {
+    _id: {
+      type: Schema.Types.ObjectId,
+      required: false,
+    },
     date: {
       type: String,
       required: false,
@@ -12,6 +16,10 @@ const reservationSchema = new Schema({
     },
   },
   room_type: {
+    _id: {
+      type: Schema.Types.ObjectId,
+      required: false,
+    },
     suite: {
       type: String,
       required: false,
@@ -19,6 +27,10 @@ const reservationSchema = new Schema({
   },
   excursion: [
     {
+      _id: {
+        type: Schema.Types.ObjectId,
+        required: false,
+      },
       excursion: {
         type: String,
         required: false,
@@ -27,6 +39,10 @@ const reservationSchema = new Schema({
   ],
   on_board_activity: [
     {
+      _id: {
+        type: Schema.Types.ObjectId,
+        required: false,
+      },
       on_board_activity: {
         type: String,
         required: false,
@@ -35,6 +51,10 @@ const reservationSchema = new Schema({
   ],
   dining_package: [
     {
+      _id: {
+        type: Schema.Types.ObjectId,
+        required: false,
+      },
       dining_package: {
         type: String,
         required: false,
