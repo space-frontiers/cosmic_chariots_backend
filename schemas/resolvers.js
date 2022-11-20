@@ -1,7 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { DiningPackage, Excursion, MissionDate, OnBoardActivity, Reservation, RoomType, User } = require('../models');
 const { signToken } = require('../utils/auth');
-const { User } = require("../models");
+// const { User } = require("../models");
 
 const resolvers = {
   Query: {
