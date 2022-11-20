@@ -14,7 +14,7 @@ const typeDefs = gql`
     zip: String
     country: String
     password: String
-    reservation: [Reservation]
+    reservation: [UserReservation]
   }
 
   type Auth {
@@ -31,6 +31,10 @@ const typeDefs = gql`
     excursion: [ExcursionReservation]
     on_board_activity: [OnBoardActivityReservation]
     dining_package: [DiningPackageReservation]
+  }
+
+  type UserReservation {
+    _id: ID!
   }
 
   type MissionDateReservation {
@@ -159,7 +163,20 @@ const typeDefs = gql`
       password: String!
     ): User
     login(email: String!, password: String!): Auth
-    addReservation: Reservation
+    updateUser(
+      userId: ID!
+      phone_number: String
+      street_address_1: String
+      street_address_2: String
+      city: String
+      state: String
+      zip: String
+      country: String
+    ): User
+    addReservation(userId: ID!, reservationId: ID!): User
+    createReservation: Reservation
+    deleteReservation(reservationId: ID!): Reservation
+    removeReservation(userId: ID!, reservationId: ID!): User
     updateReservationMissionDate(
       reservationId: ID!
       input: MissionDateInput
@@ -192,6 +209,7 @@ const typeDefs = gql`
       reservationId: ID!
       diningPackageId: ID!
     ): Reservation
+    removeUser(userId: ID!): User
   }
 `;
 
