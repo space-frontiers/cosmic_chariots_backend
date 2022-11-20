@@ -14,7 +14,7 @@ const typeDefs = gql`
     zip: String
     country: String
     password: String
-    reservation: Reservation
+    reservation: [Reservation]
   }
 
   type Auth {
@@ -22,17 +22,27 @@ const typeDefs = gql`
     user: User
   }
 
+# Reservation
+
   type Reservation {
     _id: ID!
-    user: User
-    excursion: Excursion
-    on_board_activity: OnBoardActivity
-    dining_package: DiningPackage
-    room_type: RoomType
-    mission_date: MissionDate
+    mission: MissionDateReservation
+    room_type: RoomTypeReservation
+    excursion: [String]
+    on_board_activity: [String]
+    dining_package: [String]
   }
 
-  #Room Booking
+  type MissionDateReservation {
+    date: String
+    destination: String
+  }
+
+  type RoomTypeReservation {
+    suite: String
+  }
+
+  #Costumer Options
 
   type RoomType {
     _id: ID!
@@ -50,8 +60,6 @@ type MissionDate {
     date: String
     description: String
   }
-
-  #Experiences
 
   type Excursion {
     _id: ID!
@@ -83,22 +91,14 @@ type MissionDate {
   #Input Types
 
   #Room Booking
-
-  input RoomTypeInput {
-    _id: ID!
-    suite: String
-    amenities_1: String
-    amenities_2: String
-    amenities_3: String
-    amenities_4: String
-    cost: String
-  }
   
   input MissionDateInput {
-    _id: ID!
-    destination: String
     date: String
-    description: String
+    destination: String
+  }
+
+  input RoomTypeInput {
+    suite: String
   }
 
   type Query {
@@ -119,14 +119,8 @@ type MissionDate {
     login(email: String!, password: String!): Auth
     addReservation: Reservation
     updateReservationMissionDate(reservationId: ID!, input: MissionDateInput): Reservation
+    updateReservationRoomType(reservationId: ID!, input: RoomTypeInput): Reservation
   }
 `;
 
 module.exports = typeDefs;
-
-
-// addReservation(userId: ID!, room_type: String!): Reservation
-// updateReservation(reservationId: ID!, excursion: String, on_board_activity: String, dining_package: String)): Reservation
-// removeReservation(reservationId: ID!): Reservation
-
-// updateUserReservation(userId: ID!, room_type: String!): User
