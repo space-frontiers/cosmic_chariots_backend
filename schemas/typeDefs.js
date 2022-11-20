@@ -58,6 +58,9 @@ type MissionDate {
     excursion: String
     description: String
     cost: String
+    href: String
+    imageSrc: String
+    imageAlt: String
   }
 
   type OnBoardActivity {
