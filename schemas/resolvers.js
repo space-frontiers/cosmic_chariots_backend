@@ -1,6 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { DiningPackage, Excursion, MissionDate, OnBoardActivity, Reservation, RoomType, User } = require('../models');
-// const { signToken } = require('../utils/auth');
+const { signToken } = require('../utils/auth');
+const { User } = require("../models");
 
 const resolvers = {
   Query: {
@@ -50,7 +51,7 @@ const resolvers = {
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
-      const correctPw = await profile.isCorrectPassword(password);
+      const correctPw = await user.isCorrectPassword(password);
 
       if (!user || !correctPw) {
         throw new AuthenticationError('Unable to locate user with information provided');
