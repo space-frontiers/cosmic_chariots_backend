@@ -68,6 +68,9 @@ const typeDefs = gql`
     on_board_activity: String
     description: String
     cost: String
+    href: String
+    imageSrc: String
+    imageAlt: String
   }
 
   type DiningPackage {
