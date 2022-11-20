@@ -13,6 +13,18 @@ const diningPackageSchema = new Schema({
         type: String,
         required: true,
     },
+    href: {
+        type: String,
+        required: true,
+    },
+    imageSrc: {
+        type: String,
+        required: true,
+    },
+    imageAlt: {
+        type: String,
+        required: false,
+    },
 });
 
 
