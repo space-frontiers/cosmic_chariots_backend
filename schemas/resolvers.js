@@ -9,12 +9,11 @@ const {
   User,
 } = require("../models");
 const { signToken } = require("../utils/auth");
-// const { User } = require("../models");
 
 const resolvers = {
   Query: {
     user: async (parent, { userId }) => {
-      return User.findOne({ _id: userId });
+      return User.findOne({ userId });
     },
     users: async () => {
       return User.find();
@@ -28,6 +27,9 @@ const resolvers = {
     diningPackages: async () => {
       return DiningPackage.find();
     },
+    diningPackage: async (parent, {_id}) => {
+      return DiningPackage.findOne({_id})
+    },
     excursions: async () => {
       return Excursion.find();
     },
@@ -40,12 +42,16 @@ const resolvers = {
     roomTypes: async () => {
       return RoomType.find();
     },
-    // me: async (parent, args, context) => {
-    //     if (context.user) {
-    //       return Profile.findOne({ _id: context.user._id });
-    //     }
-    //     throw new AuthenticationError('You need to be logged in!');
-    // },
+    me: async (parent, args, context) => {
+      // check if users exist
+      if (context.user) {
+        const userData = await User.findOne({ _id: context.user._id }).select(
+          "-__v -password"
+        );
+        return userData;
+      }
+        throw new AuthenticationError('You need to be logged in!');
+    },
   },
 
   Mutation: {
