@@ -143,7 +143,8 @@ const typeDefs = gql`
   }
 
   type Query {
-    user(userId: ID!): User
+
+    user(email: String!): User
     users: [User]
     me: User
     reservation(reservationId: ID!): Reservation
