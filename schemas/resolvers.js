@@ -9,7 +9,6 @@ const {
   User,
 } = require("../models");
 const { signToken } = require("../utils/auth");
-// const { User } = require("../models");
 
 const resolvers = {
   Query: {
@@ -40,12 +39,14 @@ const resolvers = {
     roomTypes: async () => {
       return RoomType.find();
     },
-    // me: async (parent, args, context) => {
-    //     if (context.user) {
-    //       return Profile.findOne({ _id: context.user._id });
-    //     }
-    //     throw new AuthenticationError('You need to be logged in!');
-    // },
+    me: async (parent, args, context) => {
+        if (context.user) {
+          const userData = await User.findOne({ _id: context.user._id });
+
+          return userData;
+        }
+        throw new AuthenticationError('You need to be logged in!');
+    },
   },
 
   Mutation: {
