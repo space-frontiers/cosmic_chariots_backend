@@ -133,10 +133,6 @@ const resolvers = {
         {
           $pull: { reservation: { _id: reservationId } },
         },
-        {
-          new: true,
-          runValidators: true,
-        }
       );
     },
     updateReservationMissionDate: async (
