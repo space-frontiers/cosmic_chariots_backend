@@ -25,7 +25,7 @@ This repository contains the app's backend. For frontend, please click [here](ht
 
 <div align="center">
 
-![Landing Page](https://i.imgur.com/VN9uDm0.jpg)
+![Landing Page](https://i.imgur.com/2UgWMvh.jpg)
     
 </div>
 
@@ -45,6 +45,8 @@ This repository contains the app's backend. For frontend, please click [here](ht
 * AOS (Animate on Scroll)
 * tailwind (for CSS styling)
 
+<br>
+
 <!-- BASIC PROJECT INFO -->
 
 ## Members
@@ -52,7 +54,6 @@ This repository contains the app's backend. For frontend, please click [here](ht
 * Albert Bautista
 * MJ Shelton
 * Holly Parker
-
 
 <br>
 
@@ -62,12 +63,6 @@ This repository contains the app's backend. For frontend, please click [here](ht
 * [Backend Github Repo](https://github.com/space-frontiers/cosmic_chariots_backend)
 * [Wireframe](https://whimsical.com/project-3-MtHszPZWp3vregnDn2rumE)
 * [Presentation](https://docs.google.com/presentation/d/1x7QMq8phBRiloBIfTyjtQ4iJNmy2AyAgCHN39ZZZcfo/edit?usp=sharing)
-
-<br>
-
-<div align="center">
-
-</div>
 
 <br>
 
@@ -90,6 +85,8 @@ This repository contains the app's backend. For frontend, please click [here](ht
   * Add up costs for users to approve
   * Create more cruise dates, room-types, excursions, on-board activities, and dining packages
   * Add ability to choose specifc rooms on the ship
+ 
+ <br>
 
 ## Contact
 
@@ -99,7 +96,10 @@ Team GitHub Page: [https://github.com/space-frontiers](https://github.com/space-
 * MJ Shelton - [GitHub](https://github.com/mjshelton12)
 * Holly Parker - [GitHub](https://github.com/hollygparker)
 
+<br>
+
 <!-- ACKNOWLEDGMENTS -->
+
 ## Acknowledgments
 
 * [aos - Animate on Scroll](https://www.npmjs.com/package/aos)
