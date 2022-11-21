@@ -154,7 +154,6 @@ const typeDefs = gql`
     missionDates: [MissionDate]
     onBoardActivities: [OnBoardActivity]
   }
-
   type Mutation {
     addUser(
       first_name: String!
@@ -162,7 +161,6 @@ const typeDefs = gql`
       email: String!
       password: String!
     ): Auth
-
     login(email: String!, password: String!): Auth
     updateUser(
       userId: ID!
@@ -174,7 +172,6 @@ const typeDefs = gql`
       zip: String
       country: String
     ): Auth
-
     addReservation(userId: ID!, reservationId: ID!): User
     createReservation: Reservation
     deleteReservation(reservationId: ID!): Reservation
