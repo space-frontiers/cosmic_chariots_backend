@@ -1,6 +1,6 @@
 <div align="center">
 
-# cosmic_chariots_backend
+# Cosmic Chariots_Cackend
 
 </div>
 
@@ -17,9 +17,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-    Cosmic Chariots is an e-commerce site that allows you to book a trip to space. Similar to booking a cruise ship, the app allows you to make a reservation on a specific launch date, choose your suite, and pick what planet excursions, on-board activities, and dining package you would like to add. You can save your location with your personal information and you will be all set to head for the stars!
+Cosmic Chariots is an e-commerce site that allows you to book a trip to space. Similar to booking a cruise ship, the app allows you to make a reservation on a specific launch date, choose your suite, and pick what planet excursions, on-board activities, and dining package you would like to add. You can save your location with your personal information and you will be all set to head for the stars!
 
-    This repository contains the app's backend. For frontend, please click [here](https://github.com/space-frontiers/cosmic_chariots_frontend).
+This repository contains the app's backend. For frontend, please click [here](https://github.com/space-frontiers/cosmic_chariots_frontend).
 
 <br>
 
@@ -64,8 +64,6 @@
 * [Presentation](https://docs.google.com/presentation/d/1x7QMq8phBRiloBIfTyjtQ4iJNmy2AyAgCHN39ZZZcfo/edit?usp=sharing)
 
 <br>
-<br>
-
 
 <div align="center">
 
@@ -93,14 +91,6 @@
   * Create more cruise dates, room-types, excursions, on-board activities, and dining packages
   * Add ability to choose specifc rooms on the ship
 
-
-
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
 ## Contact
 
 Team GitHub Page: [https://github.com/space-frontiers](https://github.com/space-frontiers)
@@ -108,12 +98,6 @@ Team GitHub Page: [https://github.com/space-frontiers](https://github.com/space-
 * Albert Bautista - [GitHub](https://github.com/devilarms83)
 * MJ Shelton - [GitHub](https://github.com/mjshelton12)
 * Holly Parker - [GitHub](https://github.com/hollygparker)
-
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
