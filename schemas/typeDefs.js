@@ -149,6 +149,7 @@ const typeDefs = gql`
     reservation(reservationId: ID!): Reservation
     reservations: [Reservation]
     diningPackages: [DiningPackage]
+    diningPackage(_id: ID!): DiningPackage
     roomTypes: [RoomType]
     excursions: [Excursion]
     missionDates: [MissionDate]

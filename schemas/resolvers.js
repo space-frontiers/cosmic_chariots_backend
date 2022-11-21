@@ -27,6 +27,9 @@ const resolvers = {
     diningPackages: async () => {
       return DiningPackage.find();
     },
+    diningPackage: async (parent, {_id}) => {
+      return DiningPackage.findOne({_id})
+    },
     excursions: async () => {
       return Excursion.find();
     },
@@ -40,11 +43,13 @@ const resolvers = {
       return RoomType.find();
     },
     me: async (parent, args, context) => {
-        if (context.user) {
-          const userData = await User.findOne({ _id: context.user._id });
-
-          return userData;
-        }
+      // check if users exist
+      if (context.user) {
+        const userData = await User.findOne({ _id: context.user._id }).select(
+          "-__v -password"
+        );
+        return userData;
+      }
         throw new AuthenticationError('You need to be logged in!');
     },
   },
