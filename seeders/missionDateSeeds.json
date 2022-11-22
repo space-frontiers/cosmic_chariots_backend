@@ -2,25 +2,25 @@
     {
         "destination": "Leave Earth Far Behind: A Mission to Mars",
         "date": "Feb 12, 2023",
-        "description": "Our most popular cruise - Spend 7 days amongst off the only world you have ever known. The full mission includes a 3 day journey to our port, a full (Earth) day on planet, and a 3 day journey back.",
+        "description": "Our most popular cruise - Spend 14 days off the only world you have ever known. The full mission includes a 6 day journey to our port, 2 full (Earth) days on planet, and a 6 day journey back.",
         "location": "Mars"
     },
     {
-        "destination": "One small step into space: A Moon Adventure",
-        "date": "Feb 19, 2023",
-        "description": "You've spent every night gazing up at our favorite rock that orbits our planet - why not finally set foot on it? The full mission includes a 1 day journey to our port, a full (Earth) day on planet, and a 1 day journey back.",
+        "destination": "One Small Step into Space: A Moon Adventure",
+        "date": "Feb 26, 2023",
+        "description": "You've spent every night gazing up at our favorite rock that orbits our planet - why not finally set foot on it? The full mission includes a 3 day journey to our port, a full (Earth) day on planet, and a 3 day journey back.",
         "location": "Moon"
     },
     {
         "destination": "Leave Earth Far Behind: A Mission to Mars",
-        "date": "Feb 22, 2023",
-        "description": "Our most popular cruise - Spend 7 days amongst off the only world you have ever known. The full mission includes a 3 day journey to our port, a full (Earth) day on planet, and a 3 day journey back.",
+        "date": "Mar 5, 2023",
+        "description": "Our most popular cruise - Spend 14 days off the only world you have ever known. The full mission includes a 6 day journey to our port, 2 full (Earth) days on planet, and a 6 day journey back.",
         "location": "Mars"
     },
     {
-        "destination": "One small step into space: A Moon Adventure",
-        "date": "Mar 1, 2023",
-        "description": "You've spent every night gazing up at our favorite rock that orbits our planet - why not finally set foot on it? The full mission includes a 1 day journey to our port, a full (Earth) day on planet, and a 1 day journey back.",
+        "destination": "One Small Step into Space: A Moon Adventure",
+        "date": "Mar 19, 2023",
+        "description": "You've spent every night gazing up at our favorite rock that orbits our planet - why not finally set foot on it? The full mission includes a 3 day journey to our port, a full (Earth) day on planet, and a 3 day journey back.",
         "location": "Moon"
     }
 ]
