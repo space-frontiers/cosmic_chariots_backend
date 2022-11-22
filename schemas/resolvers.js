@@ -133,12 +133,16 @@ const resolvers = {
     deleteReservation: async (parent, { reservationId }) => {
       return Reservation.findOneAndDelete({ _id: reservationId });
     },
-    removeReservation: ({ userId, reservationId }, context) => {
+    removeReservation: async (parent, { userId, reservationId }, context) => {
       return User.findOneAndUpdate(
         { _id: userId },
         {
           $pull: { reservation: { _id: reservationId } },
         },
+        {
+          new: true,
+          runValidators: true,
+        }
       );
     },
     updateReservationMissionDate: async (
