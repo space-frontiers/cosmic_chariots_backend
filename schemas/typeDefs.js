@@ -165,7 +165,9 @@ const typeDefs = gql`
     ): Auth
     login(email: String!, password: String!): Auth
     updateUser(
-      userId: ID!
+      email: String!
+      first_name: String
+      last_name: String
       phone_number: String
       street_address_1: String
       street_address_2: String

@@ -84,7 +84,9 @@ const resolvers = {
     updateUser: async (
       parent,
       {
-        userId,
+        email,
+        first_name,
+        last_name,
         phone_number,
         street_address_1,
         street_address_2,
@@ -96,9 +98,11 @@ const resolvers = {
       context
     ) => {
       return User.findOneAndUpdate(
-        { _id: userId },
+        { email: email },
         {
           $set: {
+            first_name,
+            last_name,
             phone_number,
             street_address_1,
             street_address_2,
