@@ -2,21 +2,25 @@
     {
         "destination": "Leave Earth Far Behind: A Mission to Mars",
         "date": "Feb 12, 2023",
-        "description": "Our most popular cruise - Spend 7 days amongst off the only world you have ever known. The full mission includes a 3 day journey to our port, a full (Earth) day on planet, and a 3 day journey back."
+        "description": "Our most popular cruise - Spend 7 days amongst off the only world you have ever known. The full mission includes a 3 day journey to our port, a full (Earth) day on planet, and a 3 day journey back.",
+        "location": "Mars"
     },
     {
         "destination": "One small step into space: A Moon Adventure",
         "date": "Feb 19, 2023",
-        "description": "You've spent every night gazing up at our favorite rock that orbits our planet - why not finally set foot on it? The full mission includes a 1 day journey to our port, a full (Earth) day on planet, and a 1 day journey back."
+        "description": "You've spent every night gazing up at our favorite rock that orbits our planet - why not finally set foot on it? The full mission includes a 1 day journey to our port, a full (Earth) day on planet, and a 1 day journey back.",
+        "location": "Moon"
     },
     {
         "destination": "Leave Earth Far Behind: A Mission to Mars",
         "date": "Feb 22, 2023",
-        "description": "Our most popular cruise - Spend 7 days amongst off the only world you have ever known. The full mission includes a 3 day journey to our port, a full (Earth) day on planet, and a 3 day journey back."
+        "description": "Our most popular cruise - Spend 7 days amongst off the only world you have ever known. The full mission includes a 3 day journey to our port, a full (Earth) day on planet, and a 3 day journey back.",
+        "location": "Mars"
     },
     {
         "destination": "One small step into space: A Moon Adventure",
         "date": "Mar 1, 2023",
-        "description": "You've spent every night gazing up at our favorite rock that orbits our planet - why not finally set foot on it? The full mission includes a 1 day journey to our port, a full (Earth) day on planet, and a 1 day journey back."
+        "description": "You've spent every night gazing up at our favorite rock that orbits our planet - why not finally set foot on it? The full mission includes a 1 day journey to our port, a full (Earth) day on planet, and a 1 day journey back.",
+        "location": "Moon"
     }
 ]
