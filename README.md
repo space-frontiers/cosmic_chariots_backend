@@ -62,7 +62,7 @@ This repository contains the app's backend. For frontend, please click [here](ht
 * [Frontend Github Repo](https://github.com/space-frontiers/cosmic_chariots_frontend)
 * [Backend Github Repo](https://github.com/space-frontiers/cosmic_chariots_backend)
 * [Wireframe](https://whimsical.com/project-3-MtHszPZWp3vregnDn2rumE)
-* [Presentation](https://docs.google.com/presentation/d/1x7QMq8phBRiloBIfTyjtQ4iJNmy2AyAgCHN39ZZZcfo/edit?usp=sharing)
+* [Presentation](https://www.canva.com/design/DAFSl9j4lhA/3dUQ5uorbs5SYP3RFoaftA/view?utm_content=DAFSl9j4lhA&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
 <br>
 
