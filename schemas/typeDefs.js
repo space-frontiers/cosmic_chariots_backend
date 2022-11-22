@@ -80,6 +80,7 @@ const typeDefs = gql`
     destination: String
     date: String
     description: String
+    location: String
   }
 
   type Excursion {
@@ -120,6 +121,7 @@ const typeDefs = gql`
     _id: ID!
     date: String
     destination: String
+    location: String
   }
 
   input RoomTypeInput {
